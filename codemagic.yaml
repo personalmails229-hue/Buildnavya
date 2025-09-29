@@ -3,10 +3,7 @@ workflows:
     name: LabourConnect Build
     max_build_duration: 60
     environment:
-      flutter: stable
-      xcode: latest
-      groups:
-        - keystore_credentials
+      flutter: 3.24.3   # stable LTS version already cached
     scripts:
       - name: Install dependencies
         script: flutter pub get
@@ -22,5 +19,6 @@ workflows:
       email:
         recipients:
           - your-personalmails229@gmail.com
+          
 
           
