@@ -1,17 +1,14 @@
 workflows:
-  flutter-app:
-    name: Labour Connect Full App
+  default-workflow:
+    name: LabourConnect Build
     max_build_duration: 60
     environment:
       flutter: stable
       xcode: latest
-      java: 17
-    cache:
-      cache_paths:
-        - $FLUTTER_ROOT/.pub-cache
-        - build/
+      groups:
+        - keystore_credentials
     scripts:
-      - name: Get Flutter packages
+      - name: Install dependencies
         script: flutter pub get
       - name: Analyze project
         script: flutter analyze
@@ -24,4 +21,6 @@ workflows:
     publishing:
       email:
         recipients:
-          - your@email.com
+          - your-personalmails229@gmail.com
+
+          
